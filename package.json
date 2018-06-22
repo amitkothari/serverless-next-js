@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "node server.js",
     "build": "next build",
-    "start": "NODE_ENV=production node server.js"
+    "start": "NODE_ENV=production node server.js",
+    "offline": "serverless offline start",
+    "deploy": "npm run build && serverless deploy"
   },
   "keywords": [],
   "author": "",
@@ -17,5 +19,8 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "serverless-http": "^1.6.0"
+  },
+  "devDependencies": {
+    "serverless-offline": "^3.25.4"
   }
 }
