@@ -1,0 +1,22 @@
+service: serverless-next-js
+
+provider:
+  name: aws
+  runtime: nodejs8.10
+  stage: development
+  region: us-east-1
+  environment:
+    NODE_ENV: production
+    LAMBDA: true
+
+functions:
+  next:
+    handler: lambda.handler
+    events:
+      - http:
+          method: ANY
+          path: /
+      - http:
+          method: ANY
+          path: /{any+}
+    warmup: true
